@@ -38,10 +38,11 @@ header nav ul {
   justify-content: center;
   list-style: none;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 header nav ul li {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 
 header nav ul li a {
@@ -49,6 +50,7 @@ header nav ul li a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
@@ -65,12 +67,17 @@ header nav ul li a:hover {
 }
 
 .inicio h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  /* Tamanho responsivo */
   margin-bottom: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .inicio p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  /* Tamanho responsivo */
   margin-bottom: 1.5rem;
 }
 
@@ -83,13 +90,18 @@ header nav ul li a:hover {
 .portfolio h2 {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  /* Tamanho responsivo */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
+  padding: 0 1rem;
 }
 
 .gallery img {
@@ -105,22 +117,37 @@ header nav ul li a:hover {
 
 /* Sobre Section */
 .sobre {
-  padding: 3rem 0;
+  padding: 4rem 0;
   background-color: #333;
   color: #f4f4f4;
 }
 
 .sobre h2 {
   text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  /* Tamanho responsivo */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .sobre p {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1rem;
+  text-align: justify;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  /* Tamanho responsivo */
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.sobre p:last-child {
+  margin-bottom: 0;
+}
+
+.sobre p strong {
+  color: #fff;
+  font-weight: bold;
 }
 
 /* Serviços Section */
@@ -132,16 +159,22 @@ header nav ul li a:hover {
 .servicos h2 {
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  /* Tamanho responsivo */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .servicos ul {
   list-style: none;
   text-align: center;
+  padding: 0;
 }
 
 .servicos ul li {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  /* Tamanho responsivo */
   margin: 0.5rem 0;
 }
 
@@ -154,12 +187,17 @@ header nav ul li a:hover {
 }
 
 .contato h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  /* Tamanho responsivo */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .contato p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  /* Tamanho responsivo */
   margin-bottom: 1.5rem;
 }
 
@@ -168,7 +206,8 @@ header nav ul li a:hover {
 }
 
 .contato .redes-sociais p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  /* Tamanho responsivo */
   margin-bottom: 1rem;
 }
 
@@ -195,7 +234,8 @@ header nav ul li a:hover {
 }
 
 .contato .redes-sociais ul li a img {
-  width: 30px;
+  width: clamp(25px, 5vw, 30px);
+  /* Tamanho responsivo */
   height: auto;
   transition: filter 0.3s ease;
 }
@@ -210,23 +250,28 @@ footer {
 
 footer p {
   margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  /* Tamanho responsivo */
 }
 
 footer ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 footer ul li {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 
 footer ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  /* Tamanho responsivo */
+  transition: color 0.3s ease;
 }
 
 footer ul li a:hover {
@@ -301,67 +346,18 @@ footer ul li a:hover {
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  body {
-    font-size: 14px;
-    /* Reduzir o tamanho base da fonte para telas menores */
-  }
-
   header nav ul {
     flex-direction: column;
     align-items: center;
   }
 
-  header nav ul li {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-  }
-
-  .inicio h2 {
-    font-size: 1.8rem;
-  }
-
-  .inicio p {
-    font-size: 1rem;
-  }
-
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-
-  .contato .redes-sociais ul {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-
-  .contato .redes-sociais ul li a img {
-    width: 25px;
-  }
 }
 
-/* Ajustes para telas muito pequenas (ex: smartphones pequenos) */
 @media (max-width: 480px) {
-  body {
-    font-size: 12px;
-    /* Reduzir ainda mais o tamanho base da fonte para telas muito pequenas */
-  }
-
-  .inicio h2 {
-    font-size: 1.5rem;
-  }
-
-  .inicio p {
-    font-size: 0.9rem;
-  }
-
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  .contato .redes-sociais ul {
-    gap: 0.5rem;
-  }
-
-  .contato .redes-sociais ul li a img {
-    width: 20px;
   }
 }
